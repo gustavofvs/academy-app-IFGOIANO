@@ -1,0 +1,101 @@
+{
+  "site": {
+    "title": "Academy Neon - Apresentação",
+    "company": "Academy Neon",
+    "subtitle": "Uma nova experiência em gestão de treinos",
+    "authors": "Bruno e Gustavo Fernandes",
+    "version": "2.0.0"
+  },
+  "presentation": {
+    "resolution": {
+      "width": 1366,
+      "height": 768
+    },
+    "slides": [
+      {
+        "id": "intro",
+        "title": "Academy Neon",
+        "type": "title",
+        "duration": 5
+      },
+      {
+        "id": "overview",
+        "title": "Visão Geral",
+        "type": "text",
+        "duration": 30
+      },
+      {
+        "id": "dashboard",
+        "title": "Dashboard",
+        "type": "feature",
+        "image": "./assets/imgs/paginainicial.png",
+        "duration": 45
+      },
+      {
+        "id": "clients",
+        "title": "Gestão de Clientes",
+        "type": "feature",
+        "image": "./assets/imgs/listaclient.PNG",
+        "duration": 45
+      },
+      {
+        "id": "register",
+        "title": "Cadastro",
+        "type": "feature",
+        "image": "./assets/imgs/cadastro.PNG",
+        "duration": 30
+      },
+      {
+        "id": "plans",
+        "title": "Planos de Treino",
+        "type": "feature",
+        "image": "./assets/imgs/planos.PNG",
+        "duration": 45
+      },
+      {
+        "id": "schedule",
+        "title": "Agendamento",
+        "type": "feature",
+        "image": "./assets/imgs/aulas.PNG",
+        "duration": 45
+      },
+      {
+        "id": "extras",
+        "title": "Recursos Extras",
+        "type": "grid",
+        "images": [
+          "./assets/imgs/franquias.PNG",
+          "./assets/imgs/notificacoes.PNG",
+          "./assets/imgs/login.PNG"
+        ],
+        "duration": 60
+      },
+      {
+        "id": "conclusion",
+        "title": "Conclusão",
+        "type": "conclusion",
+        "duration": 10
+      }
+    ],
+    "totalDuration": 315
+  },
+  "design": {
+    "theme": "dark",
+    "primaryColor": "#00ffff",
+    "secondaryColor": "#ffff00",
+    "backgroundColor": "#0f0f23",
+    "textColor": "#ffffff",
+    "fontFamily": "Inter",
+    "transitions": {
+      "duration": "0.8s",
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+    }
+  },
+  "controls": {
+    "keyboard": true,
+    "touch": true,
+    "navigation": true,
+    "progress": true,
+    "fullscreen": true
+  }
+}

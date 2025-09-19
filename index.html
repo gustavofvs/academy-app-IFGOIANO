@@ -396,6 +396,7 @@
         .feature-card:hover {
             transform: translateY(-8px);
             background: rgba(255, 255, 255, 0.08);
+            /* Remove box-shadow neon effect */
         }
 
         .feature-card h3 {
@@ -574,7 +575,7 @@
         .tech-card:hover {
             transform: translateY(-8px);
             background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 20px 40px rgba(0, 255, 255, 0.1);
+            /* Remove box-shadow neon effect */
         }
 
         .tech-icon {
@@ -586,7 +587,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
+            /* Remove transition effects */
         }
 
         .tech-icon svg {
@@ -596,9 +597,9 @@
             stroke-width: 2;
         }
 
+        /* Remove hover effects on tech icons */
         .tech-card:hover .tech-icon {
-            transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+            /* Remove all transform and box-shadow effects */
         }
 
         .tech-card h3 {
@@ -675,12 +676,13 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
-        /* Destaque de Sintaxe no Código */
-        .code-block .keyword { color: #ff79c6; }
+        /* Syntax highlighting for code blocks */
+        .code-block .keyword { color: #ff79c6; font-weight: bold; }
         .code-block .string { color: #f1fa8c; }
-        .code-block .comment { color: #6272a4; }
+        .code-block .comment { color: #6272a4; font-style: italic; }
         .code-block .function { color: #50fa7b; }
         .code-block .number { color: #bd93f9; }
+        .code-block .property { color: #8be9fd; }
 
         /* Estilos específicos para o slide "technical" */
         .technical-content {
@@ -1170,86 +1172,242 @@
         <section class="slide" data-slide="technical">
             <div class="slide-content">
                 <div class="text-section">
-                    <h2>A Arquitetura por trás da Performance</h2>
+                    <h2>Tecnologias Utilizadas</h2>
                     <p class="description">
-                        Uma base de tecnologia robusta e elegante, projetada para a máxima escalabilidade e uma experiência de usuário fluida.
+                        Uma aplicação web moderna construída com tecnologias front-end robustas, focada em responsividade e experiência do usuário.
                     </p>
                 </div>
                 
-                <div class="code-showcase">
-                    <h3>Frontend, Backend e Banco de Dados</h3>
-                    <p class="description">
-                        Do design responsivo no frontend ao poder do Node.js e PostgreSQL no backend, cada componente foi escolhido para garantir velocidade e confiabilidade.
-                    </p>
-                    <div class="tech-grid-container">
-                        <ul class="tech-list-simple">
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span>Frontend Moderno (HTML/CSS/JS)</span></li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 2a10 10 0 0 0-9 15.6l-.7.7a1 1 0 0 0 .7 1.7H20a1 1 0 0 0 .7-1.7l-.7-.7A10 10 0 0 0 12 2z"/><path d="M8 14h8"/></svg><span>Backend Escalável (Node.js)</span></li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M10 21V11"/><path d="M14 21V14"/><path d="M18 21V9"/><path d="M6 21V6"/><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg><span>Banco de Dados Robusto (PostgreSQL)</span></li>
+                <div class="tech-grid-container">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"/>
+                                <polyline points="8 6 2 12 8 18"/>
+                            </svg>
+                        </div>
+                        <h3>HTML5</h3>
+                        <ul class="tech-list">
+                            <li>Estrutura semântica</li>
+                            <li>Formulários avançados</li>
+                            <li>Validação nativa</li>
                         </ul>
                     </div>
-
-                    <div class="code-block">
-                        <pre id="code-to-copy"><code><span class="comment">// Classe ClienteManager: responsável por gerenciar toda a lógica de negócio relacionada aos clientes.</span>
-class <span class="keyword">ClienteManager</span> {
-  
-  <span class="comment">// O construtor inicializa as propriedades da classe.</span>
-  <span class="function">constructor</span>() {
-    <span class="comment">// "clientes" é um array que armazena os dados dos clientes em memória, para simulação.</span>
-    <span class="keyword">this</span>.clientes = [];
-    <span class="comment">// "filtros" é um objeto que pode ser usado para armazenar filtros de pesquisa.</span>
-    <span class="keyword">this</span>.filtros = {};
-  }
-
-  <span class="comment">// Método assíncrono para adicionar um novo cliente. A keyword 'async' indica que a função irá lidar com operações que levam tempo.</span>
-  <span class="function">async adicionarCliente</span>(dadosCliente) {
-    <span class="comment">// 1. Validação dos dados: Verifica se os dados de entrada são válidos antes de prosseguir.</span>
-    <span class="keyword">if</span> (!<span class="keyword">this</span>.validarDados(dadosCliente)) {
-      <span class="keyword">throw new</span> <span class="function">Error</span>('Dados inválidos. Não foi possível adicionar o cliente.');
-    }
-    
-    <span class="comment">// 2. Criação do objeto do cliente: Compila um novo objeto com um ID único, os dados fornecidos e a data de criação.</span>
-    <span class="keyword">const</span> novoCliente = {
-      id: <span class="keyword">this</span>.gerarId(),
-      ...dadosCliente,
-      criadoEm: <span class="keyword">new</span> <span class="function">Date</span>()
-    };
-    
-    <span class="comment">// 3. Persistência de dados: Adiciona o novo cliente ao array e, em uma aplicação real, salvaria no banco de dados.</span>
-    <span class="keyword">this</span>.clientes.<span class="function">push</span>(novoCliente);
-    <span class="comment">// A keyword 'await' simula a espera pela conclusão de uma operação assíncrona, como salvar em um banco de dados.</span>
-    <span class="keyword">await</span> <span class="keyword">this</span>.salvarNoStorage();
-    <span class="keyword">return</span> novoCliente;
-  }
-
-  <span class="comment">// Método para buscar clientes com base em um termo de pesquisa (nome ou email).</span>
-  <span class="function">buscarClientes</span>(termo) {
-    <span class="comment">// Usa o método 'filter' para criar um novo array apenas com os clientes que correspondem ao termo.</span>
-    <span class="keyword">return</span> <span class="keyword">this</span>.clientes.<span class="function">filter</span>(cliente => 
-      cliente.nome.toLowerCase().includes(termo.toLowerCase()) ||
-      cliente.email.toLowerCase().includes(termo.toLowerCase())
-    );
-  }
-  
-  <span class="comment">// Método de simulação para validação de dados. Em um sistema real, essa função conteria a lógica de validação de formulários.</span>
-  <span class="function">validarDados</span>(dados) {
-      <span class="keyword">return</span> <span class="keyword">true</span>;
-  }
-  
-  <span class="comment">// Método de simulação para gerar um ID único para cada cliente.</span>
-  <span class="function">gerarId</span>() {
-      <span class="keyword">return</span> Math.random().toString(<span class="number">36</span>).substring(<span class="number">7</span>);
-  }
-  
-  <span class="comment">// Método de simulação para persistência dos dados. Em um projeto real, aqui seria a chamada para a API ou banco de dados.</span>
-  <span class="function">salvarNoStorage</span>() {
-      <span class="comment">// Simula uma operação de salvamento com um tempo de espera.</span>
-      <span class="keyword">return new</span> <span class="function">Promise</span>(resolve => setTimeout(resolve, <span class="number">1000</span>));
-  }
-}</code></pre>
+                    
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <path d="M9 9h6v6H9z"/>
+                            </svg>
+                        </div>
+                        <h3>CSS3</h3>
+                        <ul class="tech-list">
+                            <li>Variáveis customizadas</li>
+                            <li>Flexbox & Grid</li>
+                            <li>Animações e transições</li>
+                        </ul>
                     </div>
-                    <button class="copy-code-btn" aria-label="Copiar código">Copiar</button>
-                    <div id="copy-success-message" class="copy-code-success-message">Copiado!</div>
+                    
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2a10 10 0 0 0-9 15.6l-.7.7a1 1 0 0 0 .7 1.7H20a1 1 0 0 0 .7-1.7l-.7-.7A10 10 0 0 0 12 2z"/>
+                                <path d="M8 14h8"/>
+                            </svg>
+                        </div>
+                        <h3>JavaScript</h3>
+                        <ul class="tech-list">
+                            <li>ES6+ Vanilla JS</li>
+                            <li>DOM Manipulation</li>
+                            <li>Local Storage</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <path d="M7 8h10M7 12h4M7 16h10"/>
+                            </svg>
+                        </div>
+                        <h3>Bootstrap 5</h3>
+                        <ul class="tech-list">
+                            <li>Sistema de Grid</li>
+                            <li>Componentes prontos</li>
+                            <li>Design responsivo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="code-showcase">
+                    <h3>Código CSS - Sistema de Cores Neon Personalizado</h3>
+                    <p class="description" style="font-size: 1.1rem; margin-bottom: 15px;">
+                        Este código demonstra como implementamos o sistema de cores neon do Academy Neon usando CSS moderno:
+                    </p>
+                    <div class="code-block">
+                        <pre id="code-to-copy"><code><span class="comment">/* 
+ * VARIÁVEIS CSS GLOBAIS - Sistema de Design Academy Neon
+ * Estas variáveis definem a paleta de cores principal do sistema
+ * e podem ser reutilizadas em qualquer lugar do CSS
+ */</span>
+<span class="keyword">:root</span> {
+    <span class="comment">/* Cores principais do tema neon */</span>
+    <span class="property">--neon-blue</span>: <span class="string">#00FFFF</span>;     <span class="comment">/* Azul neon - cor primária para destaques */</span>
+    <span class="property">--neon-yellow</span>: <span class="string">#FFFF00</span>;   <span class="comment">/* Amarelo neon - cor para botões principais */</span>
+    <span class="property">--neon-pink</span>: <span class="string">#FF00FF</span>;     <span class="comment">/* Rosa neon - cor para efeitos hover */</span>
+    
+    <span class="comment">/* Cores de fundo escuras para contraste */</span>
+    <span class="property">--dark-bg</span>: <span class="string">#111827</span>;        <span class="comment">/* Fundo principal escuro */</span>
+    <span class="property">--dark-secondary</span>: <span class="string">#1f2937</span>; <span class="comment">/* Fundo secundário para cards */</span>
+}
+
+<span class="comment">/* 
+ * ESTILO BASE PARA CARTÕES
+ * Define a aparência padrão dos cards no sistema
+ * com bordas neon e efeitos de transição suaves
+ */</span>
+<span class="keyword">.card</span> {
+    <span class="property">border-radius</span>: <span class="number">10px</span>;                           <span class="comment">/* Bordas arredondadas */</span>
+    <span class="property">background-color</span>: <span class="function">var</span>(<span class="string">--dark-secondary</span>);       <span class="comment">/* Usa a variável de cor de fundo */</span>
+    <span class="property">border</span>: <span class="number">1px</span> solid <span class="function">var</span>(<span class="string">--neon-blue</span>);            <span class="comment">/* Borda azul neon */</span>
+    <span class="property">transition</span>: <span class="string">transform 0.3s ease, box-shadow 0.3s ease</span>; <span class="comment">/* Animações suaves */</span>
+}
+
+<span class="comment">/* 
+ * EFEITO HOVER PARA CARTÕES
+ * Quando o usuário passa o mouse sobre um card,
+ * ele se eleva ligeiramente e ganha um brilho neon
+ */</span>
+<span class="keyword">.card:hover</span> {
+    <span class="property">transform</span>: <span class="function">translateY</span>(<span class="number">-2px</span>);                    <span class="comment">/* Move o card 2px para cima */</span>
+    <span class="property">box-shadow</span>: <span class="number">0</span> <span class="number">4px</span> <span class="number">20px</span> <span class="function">rgba</span>(<span class="number">0, 255, 255, 0.2</span>); <span class="comment">/* Sombra azul neon com transparência */</span>
+}
+
+<span class="comment">/* 
+ * BOTÕES COM TEMA NEON
+ * Estilo principal para botões do sistema Academy Neon
+ * com cores vibrantes e efeitos interativos
+ */</span>
+<span class="keyword">.btn-neon-yellow</span> {
+    <span class="property">color</span>: <span class="function">var</span>(<span class="string">--dark-bg</span>);                       <span class="comment">/* Texto escuro sobre fundo claro */</span>
+    <span class="property">background-color</span>: <span class="function">var</span>(<span class="string">--neon-yellow</span>);        <span class="comment">/* Fundo amarelo neon */</span>
+    <span class="property">border-color</span>: <span class="function">var</span>(<span class="string">--neon-yellow</span>);            <span class="comment">/* Borda da mesma cor do fundo */</span>
+    <span class="property">font-weight</span>: <span class="string">bold</span>;                          <span class="comment">/* Texto em negrito para destaque */</span>
+    <span class="property">transition</span>: <span class="string">all 0.3s ease</span>;                  <span class="comment">/* Transição suave para todas as propriedades */</span>
+}
+
+<span class="comment">/* 
+ * EFEITO HOVER PARA BOTÕES
+ * Muda a cor para rosa neon e adiciona movimento vertical
+ * criando um feedback visual interessante para o usuário
+ */</span>
+<span class="keyword">.btn-neon-yellow:hover</span> {
+    <span class="property">background-color</span>: <span class="function">var</span>(<span class="string">--neon-pink</span>);         <span class="comment">/* Muda para rosa neon no hover */</span>
+    <span class="property">border-color</span>: <span class="function">var</span>(<span class="string">--neon-pink</span>);             <span class="comment">/* Borda também muda para rosa */</span>
+    <span class="property">transform</span>: <span class="function">translateY</span>(<span class="number">-1px</span>);                   <span class="comment">/* Eleva o botão 1px */</span>
+    <span class="property">box-shadow</span>: <span class="number">0</span> <span class="number">4px</span> <span class="number">12px</span> <span class="function">rgba</span>(<span class="number">255, 0, 255, 0.3</span>); <span class="comment">/* Sombra rosa neon */</span>
+}
+
+<span class="comment">/* 
+ * MODO CLARO ALTERNATIVO
+ * Sistema de alternância de tema para melhor acessibilidade
+ * permite aos usuários escolher entre modo escuro (neon) e claro
+ */</span>
+<span class="keyword">.neon-mode</span> {
+    <span class="property">background-color</span>: <span class="string">#f8f9fa</span> !important;        <span class="comment">/* Fundo claro quando ativado */</span>
+    <span class="property">color</span>: <span class="string">#212529</span> !important;                   <span class="comment">/* Texto escuro para contraste */</span>
+}
+
+<span class="comment">/* 
+ * ADAPTAÇÃO DE CORES NO MODO CLARO
+ * Quando o modo claro está ativo, as cores neon são substituídas
+ * por cores mais convencionais para melhor legibilidade
+ */</span>
+<span class="keyword">.neon-mode .text-neon-blue</span> {
+    <span class="property">color</span>: <span class="string">#0d6efd</span> !important;                   <span class="comment">/* Azul Bootstrap no lugar do neon */</span>
+}</code></pre>
+                        <button class="copy-code-btn" aria-label="Copiar código">Copiar</button>
+                        <div id="copy-success-message" class="copy-code-success-message">Copiado!</div>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px;">Código JavaScript - Funcionalidades Interativas</h3>
+                    <p class="description" style="font-size: 1.1rem; margin-bottom: 15px;">
+                        Este código JavaScript implementa as funcionalidades dinâmicas do sistema Academy Neon:
+                    </p>
+                    <div class="code-block">
+                        <pre><code><span class="comment">/* 
+ * SISTEMA DE ALTERNÂNCIA DE TEMA
+ * Esta funcionalidade permite ao usuário alternar entre o modo neon (escuro)
+ * e o modo claro para melhor acessibilidade e preferência pessoal
+ */</span>
+
+<span class="comment">// Seleciona os elementos necessários do DOM (Document Object Model)</span>
+<span class="keyword">const</span> toggleBtn = document.getElementById(<span class="string">'neonModeToggle'</span>); <span class="comment">// Botão de alternância</span>
+<span class="keyword">const</span> body = document.body;                                      <span class="comment">// Elemento body da página</span>
+
+<span class="comment">// Adiciona um ouvinte de evento para quando o botão é clicado</span>
+toggleBtn.addEventListener(<span class="string">'click'</span>, () => {
+    <span class="comment">// 'toggle' adiciona a classe se ela não existir, ou remove se existir</span>
+    body.classList.<span class="function">toggle</span>(<span class="string">'neon-mode'</span>);
+    
+    <span class="comment">// 
+     * PERSISTÊNCIA DE PREFERÊNCIA DO USUÁRIO
+     * Salva a escolha do tema no armazenamento local do navegador
+     * para que seja lembrada na próxima visita
+     */</span>
+    <span class="keyword">if</span> (body.classList.<span class="function">contains</span>(<span class="string">'neon-mode'</span>)) {
+        <span class="comment">// Se o modo neon está ativo, salva essa preferência</span>
+        localStorage.<span class="function">setItem</span>(<span class="string">'theme'</span>, <span class="string">'neon-mode'</span>);
+    } <span class="keyword">else</span> {
+        <span class="comment">// Se não, salva a preferência pelo modo escuro padrão</span>
+        localStorage.<span class="function">setItem</span>(<span class="string>'theme'</span>, <span class="string">'dark-mode'</span>);
+    }
+});
+
+<span class="comment">/* 
+ * CARREGAMENTO DE PREFERÊNCIA SALVA
+ * Quando a página carrega, verifica se o usuário tem uma preferência
+ * de tema salva e aplica automaticamente
+ */</span>
+window.addEventListener(<span class="string">'load'</span>, () => {
+    <span class="comment">// Recupera a preferência salva do armazenamento local</span>
+    <span class="keyword">if</span> (localStorage.<span class="function">getItem</span>(<span class="string">'theme'</span>) === <span class="string">'neon-mode'</span>) {
+        <span class="comment">// Se a preferência é modo neon, ativa a classe correspondente</span>
+        body.classList.<span class="function">add</span>(<span class="string">'neon-mode'</span>);
+    }
+});
+
+<span class="comment">/* 
+ * SISTEMA DE VALIDAÇÃO DE FORMULÁRIOS
+ * Implementa validação automática usando recursos nativos do Bootstrap 5
+ * para garantir que os dados inseridos pelos usuários estão corretos
+ */</span>
+(<span class="keyword">function</span> () {
+    <span class="string">'use strict'</span> <span class="comment">// Modo estrito do JavaScript para melhor detecção de erros</span>
+    
+    <span class="comment">// Seleciona todos os formulários que precisam de validação</span>
+    <span class="keyword">var</span> forms = document.<span class="function">querySelectorAll</span>(<span class="string">'.needs-validation'</span>)
+    
+    <span class="comment">// Converte a NodeList em Array e processa cada formulário</span>
+    Array.prototype.slice.<span class="function">call</span>(forms)
+        .<span class="function">forEach</span>(<span class="keyword">function</span> (form) {
+            <span class="comment">// Adiciona um ouvinte para o evento de envio do formulário</span>
+            form.addEventListener(<span class="string">'submit'</span>, <span class="keyword">function</span> (event) {
+                <span class="comment">// Verifica se o formulário passou na validação nativa do HTML5</span>
+                <span class="keyword">if</span> (!form.<span class="function">checkValidity</span>()) {
+                    <span class="comment">// Se falhou, impede o envio e para a propagação do evento</span>
+                    event.<span class="function">preventDefault</span>()   <span class="comment">// Impede o envio</span>
+                    event.<span class="function">stopPropagation</span>()  <span class="comment">// Para a propagação</span>
+                }
+                <span class="comment">// Adiciona classes visuais para mostrar campos válidos/inválidos</span>
+                form.classList.<span class="function">add</span>(<span class="string">'was-validated'</span>)
+            }, <span class="keyword">false</span>) <span class="comment">// false = não usa captura de evento</span>
+        })
+})() <span class="comment">// Função auto-executável (IIFE - Immediately Invoked Function Expression)</span>
+</code></pre>
+                        <button class="copy-code-btn" aria-label="Copiar código">Copiar</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1739,7 +1897,7 @@ class <span class="keyword">ClienteManager</span> {
                         }
                     }
                 }, { passive: true });
-            }
+                       }
 
             /**
              * @method setupClipboard

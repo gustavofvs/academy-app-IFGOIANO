@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos de Treino - Academy Neon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body class="bg-dark text-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-neon-blue">
+    <div class="container-fluid">
+        <a class="navbar-brand text-neon-yellow" href="pagina inicial.html">
+            <i class="fas fa-bolt text-neon-blue me-2"></i>Academy Neon
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="pagina inicial.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="franquias.html">Franquias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="listaclient.html">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="planos.html">Planos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="agendamentos.html">Aulas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="logoutBtn">Sair</a>
+                </li>
+                <li class="nav-item me-2">
+                    <button class="btn btn-sm btn-outline-light" id="neonModeToggle">
+                        <i class="fas fa-toggle-on"></i>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="notificacoes.html">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge bg-danger ms-1">3</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5 pt-5">
+        <h1 class="mb-4 text-neon-blue">Planos de Treino</h1>
+        <button class="btn btn-neon-yellow mb-3">
+            <i class="fas fa-plus me-2"></i>Criar Novo Plano
+        </button>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card bg-secondary text-light">
+                    <div class="card-body">
+                        <h5 class="card-title text-neon-yellow">Plano de Hipertrofia Avançado</h5>
+                        <p class="card-text">
+                            <i class="fas fa-clock me-2"></i>Duração: 12 semanas <br>
+                            <i class="fas fa-signal me-2"></i>Nível: Avançado <br>
+                            <i class="fas fa-user-tie me-2"></i>Responsável: Instrutor Carlos
+                        </p>
+                        <a class="btn btn-link text-neon-blue" data-bs-toggle="collapse" href="#collapsePlan1" role="button" aria-expanded="false" aria-controls="collapsePlan1">
+                            Ver Exercícios
+                        </a>
+                        <div class="collapse mt-3" id="collapsePlan1">
+                            <div class="card card-body bg-dark border-neon-blue">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-dark text-light">Exercício 1: Supino Reto (4x10)</li>
+                                    <li class="list-group-item bg-dark text-light">Exercício 2: Agachamento Livre (3x8)</li>
+                                    <li class="list-group-item bg-dark text-light">Exercício 3: Levantamento Terra (4x6)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card bg-secondary text-light">
+                    <div class="card-body">
+                        <h5 class="card-title text-neon-yellow">Plano de Emagrecimento Básico</h5>
+                        <p class="card-text">
+                            <i class="fas fa-clock me-2"></i>Duração: 8 semanas <br>
+                            <i class="fas fa-signal me-2"></i>Nível: Iniciante <br>
+                            <i class="fas fa-user-tie me-2"></i>Responsável: Instrutora Ana
+                        </p>
+                        <a class="btn btn-link text-neon-blue" data-bs-toggle="collapse" href="#collapsePlan2" role="button" aria-expanded="false" aria-controls="collapsePlan2">
+                            Ver Exercícios
+                        </a>
+                        <div class="collapse mt-3" id="collapsePlan2">
+                            <div class="card card-body bg-dark border-neon-blue">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-dark text-light">Exercício 1: Esteira (20 min)</li>
+                                    <li class="list-group-item bg-dark text-light">Exercício 2: Abdominal (3x15)</li>
+                                    <li class="list-group-item bg-dark text-light">Exercício 3: Cadeira Extensora (3x12)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+    <div class="card bg-secondary text-center p-3">
+        <div class="card-body">
+            <i class="fas fa-running fa-3x text-neon-yellow mb-3"></i>
+            <h5 class="card-title text-light">Plano Condicionamento Funcional</h5>
+            <p class="card-text">Otimize a sua performance com exercícios diários.</p>
+            <span class="badge bg-success">Disponível</span>
+        </div>
+        <div class="card-footer bg-dark border-neon-blue">
+            <h4 class="text-neon-blue fw-bold">R$120/mês</h4>
+            <a href="#" class="btn btn-neon-yellow mt-2">Selecionar</a>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 col-md-6">
+    <div class="card bg-secondary text-center p-3">
+        <div class="card-body">
+            <i class="fas fa-heartbeat fa-3x text-neon-yellow mb-3"></i>
+            <h5 class="card-title text-light">Plano Cardio HIIT</h5>
+            <p class="card-text">Queime gordura e aumente a resistência em treinos curtos.</p>
+            <span class="badge bg-danger">Indisponível</span>
+        </div>
+        <div class="card-footer bg-dark border-neon-blue">
+            <h4 class="text-neon-blue fw-bold">R$150/mês</h4>
+            <a href="#" class="btn btn-neon-yellow mt-2">Selecionar</a>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 col-md-6">
+    <div class="card bg-secondary text-center p-3">
+        <div class="card-body">
+            <i class="fas fa-weight-lifting fa-3x text-neon-yellow mb-3"></i>
+            <h5 class="card-title text-light">Plano Força Extrema</h5>
+            <p class="card-text">Para quem busca ganho de força e definição muscular.</p>
+            <span class="badge bg-success">Disponível</span>
+        </div>
+        <div class="card-footer bg-dark border-neon-blue">
+            <h4 class="text-neon-blue fw-bold">R$180/mês</h4>
+            <a href="#" class="btn btn-neon-yellow mt-2">Selecionar</a>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 col-md-6">
+    <div class="card bg-secondary text-center p-3">
+        <div class="card-body">
+            <i class="fas fa-shoe-prints fa-3x text-neon-yellow mb-3"></i>
+            <h5 class="card-title text-light">Plano Corrida de Rua</h5>
+            <p class="card-text">Prepare-se para maratonas com treinos específicos e adaptáveis.</p>
+            <span class="badge bg-success">Disponível</span>
+        </div>
+        <div class="card-footer bg-dark border-neon-blue">
+            <h4 class="text-neon-blue fw-bold">R$110/mês</h4>
+            <a href="#" class="btn btn-neon-yellow mt-2">Selecionar</a>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 col-md-6">
+    <div class="card bg-secondary text-center p-3">
+        <div class="card-body">
+            <i class="fas fa-child fa-3x text-neon-yellow mb-3"></i>
+            <h5 class="card-title text-light">Plano Flexibilidade e Alongamento</h5>
+            <p class="card-text">Melhore sua mobilidade e previna lesões.</p>
+            <span class="badge bg-success">Disponível</span>
+        </div>
+        <div class="card-footer bg-dark border-neon-blue">
+            <h4 class="text-neon-blue fw-bold">R$80/mês</h4>
+            <a href="#" class="btn btn-neon-yellow mt-2">Selecionar</a>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 col-md-6">
+    <div class="card bg-secondary text-center p-3">
+        <div class="card-body">
+            <i class="fas fa-fire fa-3x text-neon-yellow mb-3"></i>
+            <h5 class="card-title text-light">Plano Queima Extrema</h5>
+            <p class="card-text">Otimize a perda de gordura corporal de forma acelerada.</p>
+            <span class="badge bg-danger">Indisponível</span>
+        </div>
+        <div class="card-footer bg-dark border-neon-blue">
+            <h4 class="text-neon-blue fw-bold">R$140/mês</h4>
+            <a href="#" class="btn btn-neon-yellow mt-2">Selecionar</a>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 col-md-6">
+    <div class="card bg-secondary text-center p-3">
+        <div class="card-body">
+            <i class="fas fa-hand-holding-heart fa-3x text-neon-yellow mb-3"></i>
+            <h5 class="card-title text-light">Plano Reabilitação Pós-Lesão</h5>
+            <p class="card-text">Treino específico para recuperação de lesões leves.</p>
+            <span class="badge bg-success">Disponível</span>
+        </div>
+        <div class="card-footer bg-dark border-neon-blue">
+            <h4 class="text-neon-blue fw-bold">R$160/mês</h4>
+            <a href="#" class="btn btn-neon-yellow mt-2">Selecionar</a>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 col-md-6">
+    <div class="card bg-secondary text-center p-3">
+        <div class="card-body">
+            <i class="fas fa-chart-line fa-3x text-neon-yellow mb-3"></i>
+            <h5 class="card-title text-light">Plano Progresso Constante</h5>
+            <p class="card-text">Um plano para quem busca resultados a longo prazo.</p>
+            <span class="badge bg-success">Disponível</span>
+        </div>
+        <div class="card-footer bg-dark border-neon-blue">
+            <h4 class="text-neon-blue fw-bold">R$130/mês</h4>
+            <a href="#" class="btn btn-neon-yellow mt-2">Selecionar</a>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 col-md-6">
+    <div class="card bg-secondary text-center p-3">
+        <div class="card-body">
+            <i class="fas fa-running fa-3x text-neon-yellow mb-3"></i>
+            <h5 class="card-title text-light">Plano Resistencia Total</h5>
+            <p class="card-text">Maximize sua capacidade cardiovascular.</p>
+            <span class="badge bg-success">Disponível</span>
+        </div>
+        <div class="card-footer bg-dark border-neon-blue">
+            <h4 class="text-neon-blue fw-bold">R$100/mês</h4>
+            <a href="#" class="btn btn-neon-yellow mt-2">Selecionar</a>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 col-md-6">
+    <div class="card bg-secondary text-center p-3">
+        <div class="card-body">
+            <i class="fas fa-dumbbell fa-3x text-neon-yellow mb-3"></i>
+            <h5 class="card-title text-light">Plano Treino de Força</h5>
+            <p class="card-text">Aumente sua força com exercícios específicos e de alta intensidade.</p>
+            <span class="badge bg-success">Disponível</span>
+        </div>
+        <div class="card-footer bg-dark border-neon-blue">
+            <h4 class="text-neon-blue fw-bold">R$160/mês</h4>
+            <a href="#" class="btn btn-neon-yellow mt-2">Selecionar</a>
+        </div>
+    </div>
+</div>
+            </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.getElementById('logoutBtn').addEventListener('click', function(event) {
+        event.preventDefault(); // Evita que o link redirecione sozinho
+        window.location.href = 'login.html'; // Redireciona para a página de login
+    });
+</script>
+<script>
+    const toggleBtn = document.getElementById('neonModeToggle');
+    const body = document.body;
+
+    toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('neon-mode');
+        
+        // Salva a preferência do usuário no armazenamento local
+        if (body.classList.contains('neon-mode')) {
+            localStorage.setItem('theme', 'neon-mode');
+        } else {
+            localStorage.setItem('theme', 'dark-mode');
+        }
+    });
+
+    // Verifica a preferência do usuário ao carregar a página
+    window.addEventListener('load', () => {
+        if (localStorage.getItem('theme') === 'neon-mode') {
+            body.classList.add('neon-mode');
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Academy Neon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .login-card {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+            border: 2px solid var(--neon-blue);
+        }
+    </style>
+</head>
+<body class="bg-dark text-light">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card bg-secondary text-light p-4 login-card">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4 text-neon-yellow">
+                            <i class="fas fa-bolt text-neon-blue me-2"></i>Academy Neon
+                        </h2>
+                        <h4 class="card-subtitle text-center mb-4 text-light">Acesso ao Sistema</h4>
+                        
+                        <form id="loginForm" class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" required>
+                                <div class="invalid-feedback">
+                                    Por favor, insira um e-mail válido.
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="senha" class="form-label">Senha</label>
+                                <input type="password" class="form-control" id="senha" placeholder="********" required>
+                                <div class="invalid-feedback">
+                                    Por favor, insira sua senha.
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-neon-yellow">Entrar</button>
+                            </div>
+                            <div id="loginAlert" class="alert alert-danger mt-3 d-none" role="alert">
+                                E-mail ou senha incorretos.
+                            </div>
+                        </form>
+                        
+                        <div class="text-center mt-3">
+                            <a href="#" class="text-neon-blue text-decoration-none">Esqueceu a senha?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const loginAlert = document.getElementById('loginAlert');
+
+            if (form.checkValidity()) {
+                // Credenciais de DEMONSTRAÇÃO. Não use isso em um site real!
+                const emailCorreto = 'admin@academynon.com';
+                const senhaCorreta = '12345';
+                
+                if (email === emailCorreto && senha === senhaCorreta) {
+                    // Se a senha e o e-mail estiverem corretos, redireciona para o Dashboard
+                    window.location.href = 'pagina inicial.html';
+                } else {
+                    // Se estiverem incorretos, mostra o alerta de erro
+                    loginAlert.classList.remove('d-none');
+                }
+            } else {
+                // Validação do Bootstrap
+                form.classList.add('was-validated');
+            }
+        });
+    </script>
+    <script>
+    document.getElementById('logoutBtn').addEventListener('click', function(event) {
+        event.preventDefault(); // Evita que o link redirecione sozinho
+        window.location.href = 'login.html'; // Redireciona para a página de login
+    });
+</script>
+<script>
+    const toggleBtn = document.getElementById('neonModeToggle');
+    const body = document.body;
+
+    toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('neon-mode');
+        
+        // Salva a preferência do usuário no armazenamento local
+        if (body.classList.contains('neon-mode')) {
+            localStorage.setItem('theme', 'neon-mode');
+        } else {
+            localStorage.setItem('theme', 'dark-mode');
+        }
+    });
+
+    // Verifica a preferência do usuário ao carregar a página
+    window.addEventListener('load', () => {
+        if (localStorage.getItem('theme') === 'neon-mode') {
+            body.classList.add('neon-mode');
+        }
+    });
+</script>
+</body>
+</html>

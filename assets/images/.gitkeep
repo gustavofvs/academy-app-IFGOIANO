@@ -1,0 +1,19 @@
+# Academy Neon Presentation Images
+
+This directory contains all presentation images. 
+
+## Required Images:
+- paginainicial.png (Dashboard)
+- listaclient.png (Client List)  
+- cadastro.png (Registration Form)
+- planos.png (Training Plans)
+- aulas.png (Class Scheduling)
+- franquias.png (Franchises)
+- notificacoes.png (Notifications)
+- login.png (Login Screen)
+
+## Optimization Tips:
+- Use PNG format for screenshots
+- Keep file sizes under 1MB
+- Optimize for web (80-90% quality)
+- Use consistent aspect ratios

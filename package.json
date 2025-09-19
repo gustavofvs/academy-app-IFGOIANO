@@ -1,0 +1,35 @@
+{
+  "name": "academy-neon-presentation",
+  "version": "2.0.0",
+  "description": "Modern interactive presentation for Academy Neon gym management system",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "serve": "npx serve .",
+    "build": "echo 'Static site - no build process needed'",
+    "deploy": "vercel --prod",
+    "preview": "vercel"
+  },
+  "keywords": [
+    "academy",
+    "gym",
+    "presentation",
+    "management",
+    "neon",
+    "fitness",
+    "web-app"
+  ],
+  "authors": [
+    "Bruno Felipe <bruno@academyneon.com>",
+    "Gustavo Fernandes <gustavo@academyneon.com>"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/academy-neon/presentation"
+  },
+  "homepage": "https://academy-neon-presentation.vercel.app",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

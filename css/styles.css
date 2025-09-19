@@ -148,6 +148,12 @@ body {
     width: 100%;
     height: auto;
     display: block;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.slide-image.loaded {
+    opacity: 1;
 }
 
 /* Code Showcase Slide */
@@ -336,8 +342,77 @@ body {
     background-color: var(--border);
     color: var(--foreground);
 }
+.navigator-item.active {
+    background-color: var(--primary);
+    color: var(--background);
+}
+.navigator-item.active .slide-number {
+    color: var(--background);
+}
 .navigator-item .slide-number {
     font-size: 0.8rem;
+}
+
+/* Image Placeholder Styles */
+.image-placeholder {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--muted);
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    color: var(--muted-foreground);
+}
+
+.placeholder-content {
+    text-align: center;
+    padding: 2rem;
+}
+
+.placeholder-content svg {
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.placeholder-content p {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.placeholder-content small {
+    opacity: 0.7;
+    font-size: 0.8rem;
+}
+
+/* Notification Styles */
+.notification {
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Print Styles */
+@media print {
+    .progress-bar,
+    .instructions,
+    .slide-navigator {
+        display: none !important;
+    }
+    
+    .slide {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        page-break-after: always;
+        height: 100vh;
+    }
+    
+    .slide:last-child {
+        page-break-after: avoid;
+    }
 }
 
 /* Responsiveness */
@@ -352,4 +427,14 @@ body {
     .image-container { margin-top: 2rem; }
     .text-content { order: 2; }
     .code-block { margin-bottom: 1.5rem; }
+    
+    .instructions {
+        bottom: 1rem;
+        font-size: 0.7rem;
+        padding: 0.25rem 0.75rem;
+    }
+    
+    .instructions::after {
+        content: " (Deslize para navegar)";
+    }
 }

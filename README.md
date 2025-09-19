@@ -21,12 +21,11 @@ academy-app-IFGOIANO/
 │   └── presentation.js          # Lógica de navegação e interatividade
 ├── assets/
 │   └── images/                  # Todas as imagens da apresentação
-│       ├── README.md           # Instruções para organização das imagens
-│       ├── pagina-inicial.png   # Dashboard principal
-│       ├── lista-clientes.png   # Lista de clientes
-│       ├── cadastro-cliente.png # Formulário de cadastro
-│       ├── planos-treino.png    # Planos de treino
-│       ├── agendamento-aulas.png # Agendamento de aulas
+│       ├── paginainicial.png   # Dashboard principal
+│       ├── listaclientes.png   # Lista de clientes
+│       ├── cadastro.png # Formulário de cadastro
+│       ├── planos.png    # Planos de treino
+│       ├── aulas.png # Agendamento de aulas
 │       ├── franquias.png        # Sistema de franquias
 │       ├── notificacoes.png     # Central de notificações
 │       └── login.png            # Tela de login

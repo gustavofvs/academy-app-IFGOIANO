@@ -31,13 +31,5 @@
         }
       ]
     }
-  ],
-  "functions": {
-    "app": {
-      "includeFiles": "**"
-    }
-  },
-  "outputDirectory": ".",
-  "buildCommand": null,
-  "framework": null
+  ]
 }

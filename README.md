@@ -6,145 +6,104 @@ Uma apresentação moderna e profissional do sistema Academy Neon, criada com te
 
 - **Design Responsivo**: Funciona perfeitamente em desktop, tablet e mobile
 - **Navegação Intuitiva**: Setas do teclado, cliques e gestos touch
-- **Visualização de Imagens**: Clique nas imagens para expandir em tela cheia
-- **Cursor Personalizado**: Cursor raio neon para melhor experiência visual
-- **Ícones SVG Neon**: Ícones personalizados com efeitos visuais
+- **Arquitetura Organizada**: Código separado em módulos CSS e JavaScript
 - **Animações Suaves**: Transições profissionais entre slides
-- **Fácil Customização**: Arquivo de configuração JSON
-- **Performance Otimizada**: Carregamento rápido e eficiente
+- **Fácil Manutenção**: Estrutura de arquivos bem definida
 
 ## 📁 Estrutura do Projeto
 
 ```
-Slides/
-├── index.html              # Arquivo principal
-├── config/
-│   └── config.json         # Configurações do site
+academy-app-IFGOIANO/
+├── index.html                    # Arquivo principal da apresentação
 ├── css/
-│   └── styles.css          # Estilos personalizados
+│   └── styles.css               # Estilos principais da apresentação
 ├── js/
-│   └── app.js             # Lógica da aplicação
-├── images/
-│   └── README.md          # Instruções para imagens
-└── README.md              # Esta documentação
+│   └── presentation.js          # Lógica de navegação e interatividade
+├── assets/
+│   └── images/                  # Todas as imagens da apresentação
+│       ├── README.md           # Instruções para organização das imagens
+│       ├── pagina-inicial.png   # Dashboard principal
+│       ├── lista-clientes.png   # Lista de clientes
+│       ├── cadastro-cliente.png # Formulário de cadastro
+│       ├── planos-treino.png    # Planos de treino
+│       ├── agendamento-aulas.png # Agendamento de aulas
+│       ├── franquias.png        # Sistema de franquias
+│       ├── notificacoes.png     # Central de notificações
+│       └── login.png            # Tela de login
+└── README.md                    # Esta documentação
 ```
 
 ## 🎯 Como Usar
 
-1. **Abrir a Apresentação**
+1. **Configurar as Imagens**
+   - Mova suas imagens para a pasta `assets/images/`
+   - Renomeie conforme a estrutura indicada
+   - Veja `assets/images/README.md` para detalhes
+
+2. **Abrir a Apresentação**
    - Abra o arquivo `index.html` em qualquer navegador moderno
-   - Ou sirva os arquivos através de um servidor web
+   - **Recomendado**: Use um servidor local para melhor performance
 
-2. **Navegação**
-   - **Setas do teclado**: ← → para navegar
-   - **Clique**: Nos botões laterais
-   - **Touch**: Deslize para esquerda/direita em dispositivos móveis
-   - **Atalhos**: Home (primeiro slide), End (último slide)
+3. **Navegação**
+   - **Setas do teclado**: ← → para navegar entre slides
+   - **Tecla P**: Abre o painel de navegação
+   - **ESC**: Fecha o painel de navegação
 
-3. **Visualização de Imagens**
-   - **Clique nas imagens**: Para expandir em tela cheia
-   - **ESC**: Para fechar a visualização expandida
-   - **Clique fora da imagem**: Para fechar a visualização
+## 🛠️ Organização dos Arquivos
 
-## ⚙️ Funcionalidades Interativas
+### HTML (index.html)
+- Estrutura principal da apresentação
+- Referencias para CSS e JavaScript externos
+- Conteúdo semântico de cada slide
 
-### 🖼️ Modal de Imagens
-- Clique em qualquer imagem para visualizar em tela cheia
-- Navegação por teclado (ESC para fechar)
-- Efeitos visuais suaves de entrada e saída
-- Informações contextuais da imagem
+### CSS (css/styles.css)
+- Todas as variáveis CSS organizadas
+- Estilos responsivos
+- Animações e transições
+- Temas de cores e tipografia
 
-### 🖱️ Cursor Personalizado
-- Cursor raio neon simplificado
-- Consistente em todos os elementos interativos:
-  - ⚡ Cursor padrão (raio neon)
-  - ⚡ Cursor de ação para todos os elementos clicáveis
+### JavaScript (js/presentation.js)
+- Classe `MinimalistPresentation` 
+- Lógica de navegação entre slides
+- Controle do painel de navegação
+- Manipulação de eventos de teclado
 
-### 🎨 Efeitos Visuais
-- Ícones SVG neon com hover effects
-- Shimmer effect durante carregamento de imagens
-- Indicadores de zoom ao passar o mouse
-- Gradientes neon nos elementos interativos
-- Transições suaves em todos os componentes
+### Imagens (assets/images/)
+- Todas as capturas de tela do sistema
+- Nomes padronizados com hífens
+- Formatos otimizados (PNG recomendado)
 
-## 🎨 Personalização Avançada
+## 🎨 Personalização
 
-### Cursor Personalizado
+### Modificar Cores
 ```css
-/* Modificar cursor padrão */
-body {
-  cursor: url('data:image/svg+xml;utf8,<svg>...</svg>'), auto;
+/* Em css/styles.css, altere as variáveis CSS */
+:root {
+    --background: #020817;
+    --foreground: #f8fafc;
+    --primary: #f8fafc;
+    /* ... outras variáveis */
 }
 ```
 
-### Modal de Imagens
+### Adicionar Novos Slides
+1. Adicione uma nova `<section class="slide">` no HTML
+2. Defina `data-slide` e `data-title` apropriados
+3. O JavaScript automaticamente inclui no navegador
+
+### Modificar Animações
 ```css
-/* Personalizar modal */
-.image-modal {
-  background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(20px);
+/* Em css/styles.css, altere as propriedades de transição */
+.slide {
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 ```
-
-### CSS Customizado
-- Edite `css/styles.css` para modificar estilos
-- Use variáveis CSS para mudanças globais
-- Adicione animações personalizadas
-
-### JavaScript
-- Modifique `js/app.js` para nova funcionalidade
-- Adicione eventos personalizados
-- Integre com APIs externas
 
 ## 📱 Compatibilidade
 
 - **Navegadores**: Chrome, Firefox, Safari, Edge (versões modernas)
 - **Dispositivos**: Desktop, Tablet, Smartphone
 - **Sistemas**: Windows, macOS, Linux, iOS, Android
-
-## 🔧 Solução de Problemas
-
-### Imagens não aparecem
-- **Verifique os arquivos**: Confirme se as imagens estão na pasta `assets/imgs/`
-- **Nomes corretos**: As imagens devem ter os nomes exatos:
-  - `paginainicial.png`
-  - `listaclient.PNG` 
-  - `cadastro.PNG`
-  - `planos.PNG`
-  - `aulas.PNG`
-  - `franquias.PNG`
-  - `notificacoes.PNG`
-  - `login.PNG`
-- **Console do navegador**: Abra F12 e veja se há erros de carregamento
-- **Comando debug**: Digite `debugImages()` no console para verificar status
-- **Servidor local**: Use um servidor local em vez de abrir diretamente o arquivo
-
-### Debug de Imagens
-```javascript
-// No console do navegador, digite:
-debugImages()
-```
-
-### Cursor não aparece personalizado
-- Verifique se o navegador suporta SVG em cursors
-- Teste em navegadores modernos (Chrome, Firefox, Safari, Edge)
-- Fallback automático para cursor padrão
-
-### Imagens não carregam
-- Verifique se os caminhos estão corretos
-- Confirme se as imagens estão na pasta correta
-- Teste com um servidor web local
-
-### Configurações não aplicam
-- Valide a sintaxe do JSON em `config.json`
-- Verifique o console do navegador para erros
-- Recarregue a página após mudanças
-
-### Performance lenta
-- Otimize as imagens (compressão)
-- Use um CDN para recursos externos
-- Ative o cache do navegador
-- **Importante**: Sempre use um servidor local para melhor performance
 
 ## 🚀 Deployment
 
@@ -160,52 +119,66 @@ npx serve .
 php -S localhost:8000
 
 # Visual Studio Code
-# Instale a extensão "Live Server" e clique com botão direito no index.html
+# Instale a extensão "Live Server"
 ```
 
 ### ⚠️ Importante sobre Imagens
-As imagens podem não carregar corretamente quando você abre o `index.html` diretamente no navegador devido às políticas de segurança (CORS). **Sempre use um servidor local** para garantir que tudo funcione corretamente.
+Para garantir que todas as imagens carreguem corretamente:
+
+1. **Organize as imagens** na pasta `assets/images/`
+2. **Use nomes corretos** conforme especificado
+3. **Sempre use um servidor local** para desenvolvimento
+4. **Teste em diferentes navegadores**
 
 ## 📋 Controles da Apresentação
 
-| Ação | Tecla/Gesto | Descrição |
-|------|-------------|-----------|
-| Próximo slide | → / Space / PageDown | Avança para o próximo slide |
-| Slide anterior | ← / PageUp | Volta para o slide anterior |
-| Primeiro slide | Home | Vai para o slide inicial |
-| Último slide | End | Vai para o slide final |
-| Expandir imagem | Clique na imagem | Abre imagem em tela cheia |
-| Fechar imagem | ESC / Clique fora | Fecha visualização expandida |
+| Ação | Tecla | Descrição |
+|------|-------|-----------|
+| Próximo slide | → / Space | Avança para o próximo slide |
+| Slide anterior | ← | Volta para o slide anterior |
+| Painel navegação | P | Abre/fecha painel de slides |
+| Fechar painel | ESC | Fecha painel de navegação |
 | Tela cheia | F11 | Ativa/desativa modo tela cheia |
-| Sair tela cheia | ESC | Sai do modo tela cheia |
-| Deslizar | Touch horizontal | Navegação em dispositivos móveis |
+
+## 🔧 Solução de Problemas
+
+### Imagens não aparecem
+1. Verifique se estão na pasta `assets/images/`
+2. Confirme os nomes dos arquivos
+3. Use um servidor local
+4. Abra o console do navegador (F12) para ver erros
+
+### CSS/JS não carrega
+1. Verifique os caminhos dos arquivos
+2. Confirme que todos os arquivos existem
+3. Use um servidor local
+4. Limpe o cache do navegador
+
+### Performance lenta
+1. Otimize as imagens (comprima)
+2. Use formatos modernos (WebP)
+3. Sempre use servidor local
+4. Teste em navegadores diferentes
 
 ## 🆘 Suporte
 
-Para suporte técnico ou dúvidas:
-- Verifique esta documentação primeiro
-- Consulte o console do navegador para erros
-- Teste em diferentes navegadores
-
-## 📄 Licença
-
-Este projeto foi desenvolvido para Academy Neon.
-Todos os direitos reservados.
+Para suporte técnico:
+1. Verifique esta documentação
+2. Consulte os READMEs das subpastas
+3. Verifique o console do navegador
+4. Teste em diferentes navegadores
 
 ---
 
 **Desenvolvido por**: Bruno e Gustavo Fernandes  
-**Versão**: 2.0.0  
+**Versão**: 2.0.0 - Estrutura Organizada  
 **Última atualização**: 2024
 
 ### ✨ Novidades da Versão 2.0:
-- Modal de visualização de imagens em tela cheia
-- Cursor personalizado raio neon simplificado
-- Ícones SVG neon personalizados
-- Indicadores visuais de zoom
-- Efeitos de carregamento de imagens
-- Melhor experiência de navegação
-- Suporte completo a teclado e touch
-- **Sistema robusto de carregamento de imagens**
-- **Placeholders automáticos quando imagens falham**
-- **Debug tools para diagnóstico**
+- **Estrutura modular** com arquivos separados
+- **CSS organizado** em arquivo externo
+- **JavaScript modular** para melhor manutenção
+- **Pasta de assets** dedicada para imagens
+- **Documentação atualizada** para nova estrutura
+- **Nomes de arquivo padronizados**
+- **Melhor organização para desenvolvimento**
